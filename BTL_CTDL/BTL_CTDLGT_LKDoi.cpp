@@ -468,7 +468,7 @@
 
 
 
-    void menuNL(){
+    int menuNL(){
         FILE *f;
         ListNL lnl;
         NodeNL *p;
@@ -531,14 +531,6 @@
             }
         }while( chonNL != 0);
     }
-
-    int mainNL(){
-        while(1){
-            menuNL();
-            getch();
-        }
-    }
-
 
         //Sản Phẩm
     struct SP{
@@ -937,7 +929,7 @@
                             break;*/
 
 
-    void menuSP(){
+    int menuSP(){
         FILE *f;
         SP sp;
         ListSP lsp;
@@ -1000,15 +992,6 @@
             }
         }while( chonSP != 0);
     }
-
-    int mainSP(){
-        while(1){
-            menuSP();
-            getch();
-        }
-    }
-
-
 
      // Hóa Đơn
         struct HD{
@@ -1306,7 +1289,7 @@
             }
         }
 
-        void menuHD(){
+        int menuHD(){
             FILE *f;
             ListHD lhd;
             NodeHD *h;
@@ -1368,13 +1351,6 @@
             }while(chonHD != 0);
         }
 
-        int mainHD(){
-            while(1){
-                menuHD();
-                getch();
-            }
-        }
-
         int main(){
             int chonmain;
             do{
@@ -1388,16 +1364,13 @@
                 switch(chonmain){
                     case 0: break;
 
-                    case 1: mainNL();
-                            getch();
-                            getch();
-                            break;
-                    case 2: mainSP();
-                            getch();
+                    case 1: menuNL();
                             getch();
                             break;
-                    case 3: mainHD();
+                    case 2: menuSP();
                             getch();
+                            break;
+                    case 3: menuHD();
                             getch();
                             break;
 
